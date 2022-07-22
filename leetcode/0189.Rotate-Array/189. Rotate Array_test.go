@@ -31,7 +31,6 @@ func Test_Problem189(t *testing.T) {
 			para189{[]int{1, 2, 3, 4, 5, 6, 7}, 3},
 			ans189{[]int{5, 6, 7, 1, 2, 3, 4}},
 		},
-
 		{
 			para189{[]int{-1, -100, 3, 99}, 2},
 			ans189{[]int{3, 99, -1, -100}},
@@ -42,7 +41,7 @@ func Test_Problem189(t *testing.T) {
 
 	for _, q := range qs {
 		_, p := q.ans189, q.para189
-		fmt.Printf("【input】:%v       ", p)
+		fmt.Printf("【input】:%v ", p)
 		rotate(p.nums, p.k)
 		fmt.Printf("【output】:%v\n", p.nums)
 	}
