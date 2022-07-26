@@ -19,7 +19,6 @@ Given a string, you need to reverse the order of characters in each word within 
 
 
 ## 解题思路
-
-
-- 反转字符串，要求按照空格隔开的小字符串为单位反转。
+- 字符串要转成byte类型，可以赋值
+- 反转字符串，要求按照空格隔开(strings.split)的小字符串为单位反转。
 - 这是一道简单题。按照题意反转每个空格隔开的单词即可。

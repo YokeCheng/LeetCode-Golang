@@ -25,13 +25,8 @@ func middleNode(head *ListNode) *ListNode {
 		p1 = p1.Next
 		p2 = p2.Next.Next
 	}
-	length := 0
-	cur := head
-	for cur != nil {
-		length++
-		cur = cur.Next
-	}
-	if length%2 == 0 {
+
+	if p2.Next != nil {
 		return p1.Next
 	}
 	return p1

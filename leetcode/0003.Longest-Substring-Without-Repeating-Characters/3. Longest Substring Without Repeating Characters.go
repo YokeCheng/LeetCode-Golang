@@ -1,7 +1,7 @@
 package leetcode
 
 // 解法一 位图
-func lengthOfLongestSubstring(s string) int {
+func lengthOfLongestSubstring3(s string) int {
 	if len(s) == 0 {
 		return 0
 	}
