@@ -60,3 +60,61 @@ func levelOrder1(root *TreeNode) [][]int {
 	dfsLevel(root, 0)
 	return res
 }
+
+func levelOrder2(root *TreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+
+	queue := []*TreeNode{root}
+	res := make([][]int, 0)
+	level := 1
+	for len(queue) > 0 {
+		l := len(queue)
+		tmp := make([]int, 0, l)
+		for i := 0; i < l; i++ {
+			if queue[i].Left != nil {
+				queue = append(queue, queue[i].Left)
+			}
+			if queue[i].Right != nil {
+				queue = append(queue, queue[i].Right)
+			}
+			if level%2 == 1 {
+				tmp = append(tmp, queue[i].Val)
+			} else {
+				tmp = append([]int{queue[i].Val}, tmp...)
+			}
+		}
+		queue = queue[l:]
+		res = append(res, tmp)
+		level++
+	}
+	return res
+}
+
+func isStraight(nums []int) bool {
+	var mapN [14]bool
+	min, max := 14, 0
+
+	for _, num := range nums {
+		if num == 0 {
+			continue
+		}
+		if num < min {
+			min = num
+		}
+		if num > max {
+			max = num
+		}
+		if mapN[num] {
+			return false
+		}
+		mapN[num] = true
+	}
+
+	if max-min <= 4 {
+		return true
+	}
+
+	return false
+}

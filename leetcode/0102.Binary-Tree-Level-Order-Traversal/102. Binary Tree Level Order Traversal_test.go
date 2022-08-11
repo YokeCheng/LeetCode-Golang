@@ -54,3 +54,7 @@ func Test_Problem102(t *testing.T) {
 	}
 	fmt.Printf("\n\n\n")
 }
+
+func Test_Problem1023(t *testing.T) {
+	fmt.Printf("【output】:%v      \n", isStraight([]int{9, 4, 2, 5, 6}))
+}

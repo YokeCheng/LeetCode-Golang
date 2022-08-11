@@ -27,11 +27,10 @@ type ans235 struct {
 }
 
 func Test_Problem235(t *testing.T) {
-
 	qs := []question235{
 
 		{
-			para235{[]int{}, []int{}, []int{}},
+			para235{[]int{3, 5, 1, 6, 2, 0, 8, structures.NULL, structures.NULL, 7, 4}, []int{5}, []int{4}},
 			ans235{[]int{}},
 		},
 

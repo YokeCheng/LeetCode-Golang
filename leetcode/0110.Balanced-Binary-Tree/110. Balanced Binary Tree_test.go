@@ -27,7 +27,10 @@ type ans110 struct {
 func Test_Problem110(t *testing.T) {
 
 	qs := []question110{
-
+		{
+			para110{[]int{1, 2, 2, 3, 3, structures.NULL, structures.NULL, 4, 4}},
+			ans110{false},
+		},
 		{
 			para110{[]int{3, 4, 4, 5, structures.NULL, structures.NULL, 5, 6, structures.NULL, structures.NULL, 6}},
 			ans110{false},

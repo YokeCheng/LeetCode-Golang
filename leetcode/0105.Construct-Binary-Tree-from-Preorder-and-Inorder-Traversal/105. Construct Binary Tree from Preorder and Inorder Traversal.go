@@ -17,14 +17,18 @@ type TreeNode = structures.TreeNode
  */
 
 // 解法一, 直接传入需要的 slice 范围作为输入, 可以避免申请对应 inorder 索引的内存, 内存使用(leetcode test case) 4.7MB -> 4.3MB.
+// preorder 前序（根左右） inorder 中序遍历（左根右）
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	if len(preorder) == 0 {
 		return nil
 	}
 	root := &TreeNode{Val: preorder[0]}
 	for pos, node := range inorder {
+		// 获取根
 		if node == root.Val {
+			// 获取根左侧数据
 			root.Left = buildTree(preorder[1:pos+1], inorder[:pos])
+			// 获取根右侧数据
 			root.Right = buildTree(preorder[pos+1:], inorder[pos+1:])
 		}
 	}

@@ -40,3 +40,7 @@ Implement [pow(*x*, *n*)](http://www.cplusplus.com/reference/valarray/pow/), w
 
 - 要求计算 Pow(x, n)
 - 这一题用递归的方式，不断的将 n 2 分下去。注意 n 的正负数，n 的奇偶性。
+
+大佬解析：
+https://leetcode.cn/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/solution/mian-shi-ti-16-shu-zhi-de-zheng-shu-ci-fang-kuai-s/
+![img.png](img.png)

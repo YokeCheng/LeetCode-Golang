@@ -16,16 +16,40 @@ type TreeNode = structures.TreeNode
  * }
  */
 
-func maxDepth(root *TreeNode) int {
+/*func maxDepth2(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
 	return max(maxDepth(root.Left), maxDepth(root.Right)) + 1
-}
+}*/
 
 func max(a int, b int) int {
 	if a > b {
 		return a
 	}
 	return b
+}
+
+func maxDepth(root *TreeNode) int {
+	return DFS(root, 0)
+}
+
+func DFS(root *TreeNode, level int) int {
+	if root == nil {
+		return level
+	}
+	level++
+	leftLevel, rightLevel := level, level
+	if root.Left != nil {
+		leftLevel = DFS(root.Left, level)
+	}
+
+	if root.Right != nil {
+		rightLevel = DFS(root.Right, level)
+	}
+
+	if leftLevel > rightLevel {
+		return leftLevel
+	}
+	return rightLevel
 }

@@ -28,14 +28,8 @@ type ans160 struct {
 func Test_Problem160(t *testing.T) {
 
 	qs := []question160{
-
 		{
-			para160{[]int{}, []int{}},
-			ans160{[]int{}},
-		},
-
-		{
-			para160{[]int{3}, []int{1, 2, 3}},
+			para160{[]int{4}, []int{3}},
 			ans160{[]int{3}},
 		},
 

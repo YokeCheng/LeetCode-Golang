@@ -27,7 +27,7 @@ func Test_Problem3(t *testing.T) {
 	qs := []question3{
 
 		{
-			para3{"abba"},
+			para3{"abcabcbb"},
 			ans3{3},
 		},
 

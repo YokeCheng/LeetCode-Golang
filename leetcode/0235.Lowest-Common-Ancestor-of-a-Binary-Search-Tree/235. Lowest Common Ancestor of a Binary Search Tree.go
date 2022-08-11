@@ -15,7 +15,6 @@ type TreeNode = structures.TreeNode
  *     Right *TreeNode
  * }
  */
-
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if p == nil || q == nil || root == nil {
 		return nil

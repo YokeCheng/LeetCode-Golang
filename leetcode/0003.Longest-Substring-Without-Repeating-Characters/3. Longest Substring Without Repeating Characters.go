@@ -1,7 +1,28 @@
 package leetcode
 
+func lengthOfLongestSubstring6(s string) int {
+	if len(s) <= 1 {
+		return len(s)
+	}
+
+	curStart, res := 0, 0
+	indexes := make(map[rune]int, len(s))
+	for i, a := range s {
+		if index, ok := indexes[a]; ok {
+			if index >= curStart {
+				curStart = indexes[a] + 1
+			}
+		}
+		if res < i-curStart+1 {
+			res = i - curStart + 1
+		}
+		indexes[a] = i
+	}
+	return res
+}
+
 // 解法一 位图
-func lengthOfLongestSubstring3(s string) int {
+func lengthOfLongestSubstring1(s string) int {
 	if len(s) == 0 {
 		return 0
 	}
@@ -27,7 +48,7 @@ func lengthOfLongestSubstring3(s string) int {
 }
 
 // 解法二 滑动窗口
-func lengthOfLongestSubstring1(s string) int {
+func lengthOfLongestSubstring5(s string) int {
 	if len(s) == 0 {
 		return 0
 	}
