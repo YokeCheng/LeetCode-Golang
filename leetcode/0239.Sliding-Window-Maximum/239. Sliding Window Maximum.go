@@ -22,22 +22,22 @@ func maxSlidingWindow1(a []int, k int) []int {
 
 // 解法二 双端队列 Deque
 func maxSlidingWindow(nums []int, k int) []int {
-	if len(nums) == 0 || len(nums) < k {
-		return make([]int, 0)
-	}
-	window := make([]int, 0, k) // store the index of nums
-	result := make([]int, 0, len(nums)-k+1)
-	for i, v := range nums { // if the left-most index is out of window, remove it
-		if i >= k && window[0] <= i-k {
-			window = window[1:]
+	var queue []int
+	var res []int
+	for i := 0; i < len(nums); i++ {
+		// 循环将最后一个值小于当前值的剔除，其实相当于保留了一个最大值在最前面
+		for len(queue) > 0 && queue[len(queue)-1] < nums[i] {
+			queue = queue[:len(queue)-1]
 		}
-		for len(window) > 0 && nums[window[len(window)-1]] < v { // maintain window
-			window = window[0 : len(window)-1]
+		queue = append(queue, nums[i])
+		// 通过队列中第一个数和 前第K个数比较,相同表示本轮窗格应该去掉开始的数
+		if i >= k && queue[0] == nums[i-k] {
+			queue = queue[1:]
 		}
-		window = append(window, i) // store the index of nums
+		// 由于是递增的，所以直接取最开始的数即可
 		if i >= k-1 {
-			result = append(result, nums[window[0]]) // the left-most is the index of max value in nums
+			res = append(res, queue[0])
 		}
 	}
-	return result
+	return res
 }

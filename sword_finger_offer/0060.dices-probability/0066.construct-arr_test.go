@@ -13,7 +13,7 @@ type question66 struct {
 // para 是参数
 // one 代表第一个参数
 type para66 struct {
-	nums int
+	nums []int
 }
 
 // ans 是答案
@@ -27,11 +27,11 @@ func Test_Problem66(t *testing.T) {
 	qs := []question66{
 
 		{
-			para66{2},
+			para66{[]int{1, 2, 3, 4, 5, 6, 7}},
 			ans66{[]int{5, 6, 7, 1, 2, 3, 4}},
 		},
 		{
-			para66{1},
+			para66{[]int{-1, -100, 3, 99}},
 			ans66{[]int{3, 99, -1, -100}},
 		},
 	}
@@ -42,7 +42,7 @@ func Test_Problem66(t *testing.T) {
 		_, p := q.ans66, q.para66
 		fmt.Printf("【input】:%v ", p)
 
-		fmt.Printf("【output】:%v\n", printNumbers(p.nums))
+		fmt.Printf("【output】:%v\n", constructArr(p.nums))
 	}
 	fmt.Printf("\n\n\n")
 }

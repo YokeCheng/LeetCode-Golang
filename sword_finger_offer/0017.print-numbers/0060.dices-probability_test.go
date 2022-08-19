@@ -31,7 +31,7 @@ func Test_Problem66(t *testing.T) {
 			ans66{[]int{5, 6, 7, 1, 2, 3, 4}},
 		},
 		{
-			para66{1},
+			para66{3},
 			ans66{[]int{3, 99, -1, -100}},
 		},
 	}
@@ -42,7 +42,7 @@ func Test_Problem66(t *testing.T) {
 		_, p := q.ans66, q.para66
 		fmt.Printf("【input】:%v ", p)
 
-		fmt.Printf("【output】:%v\n", printNumbers(p.nums))
+		fmt.Printf("【output】:%v\n", dicesProbability(p.nums))
 	}
 	fmt.Printf("\n\n\n")
 }
