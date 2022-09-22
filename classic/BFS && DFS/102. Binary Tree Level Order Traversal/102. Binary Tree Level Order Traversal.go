@@ -1,4 +1,4 @@
-package leetcode
+package _02__Binary_Tree_Level_Order_Traversal
 
 import (
 	"github.com/halfrost/LeetCode-Go/structures"
