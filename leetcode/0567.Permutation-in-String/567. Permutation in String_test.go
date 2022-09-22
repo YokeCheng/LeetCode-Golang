@@ -26,9 +26,8 @@ type ans567 struct {
 func Test_Problem567(t *testing.T) {
 
 	qs := []question567{
-
 		{
-			para567{"ba", "acbc"},
+			para567{"hello", "ooolleoooleh"},
 			ans567{true},
 		},
 

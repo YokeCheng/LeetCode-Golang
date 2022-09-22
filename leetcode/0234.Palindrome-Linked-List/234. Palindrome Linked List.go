@@ -7,6 +7,28 @@ import (
 // ListNode define
 type ListNode = structures.ListNode
 
+// 递归
+func isPalindrome(head *ListNode) bool {
+	frontPointer := head
+	var recursivelyCheck func(*ListNode) bool
+	recursivelyCheck = func(curNode *ListNode) bool {
+		if curNode != nil {
+			// 返回true则表示到达最后一个值
+			if !recursivelyCheck(curNode.Next) {
+				return false
+			}
+			// 由于是递归操作,则会不停的倒序递归出每个值，front是顺序next，两者比较
+			if curNode.Val != frontPointer.Val {
+				return false
+			}
+			//
+			frontPointer = frontPointer.Next
+		}
+		return true
+	}
+	return recursivelyCheck(head)
+}
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -16,7 +38,7 @@ type ListNode = structures.ListNode
  */
 
 // 解法一
-func isPalindrome(head *ListNode) bool {
+func isPalindrome3(head *ListNode) bool {
 	slice := []int{}
 	for head != nil {
 		slice = append(slice, head.Val)

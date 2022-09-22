@@ -1,8 +1,8 @@
 package leetcode
 
 func findMaxLength(nums []int) int {
-	dict := map[int]int{}
-	dict[0] = -1
+	//dict := map[int]int{}
+	dict := map[int]int{0: -1}
 	count, res := 0, 0
 	for i := 0; i < len(nums); i++ {
 		if nums[i] == 0 {

@@ -26,11 +26,18 @@ func Test_Problem84(t *testing.T) {
 
 	qs := []question84{
 
-		{
+		/*{
 			para84{[]int{2, 1, 5, 6, 2, 3}},
 			ans84{10},
+		},*/
+		{
+			para84{[]int{1, 2, 3, 4, 5, 6}},
+			ans84{10},
 		},
-
+		{
+			para84{[]int{1, 5, 3, 4, 6, 8}},
+			ans84{10},
+		},
 		{
 			para84{[]int{1}},
 			ans84{1},

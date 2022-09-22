@@ -27,7 +27,7 @@ func Test_Problem15(t *testing.T) {
 	qs := []question15{
 
 		{
-			para15{[]int{0, 0, 0}},
+			para15{[]int{0, 0, 0, 0}},
 			ans15{[][]int{{0, 0, 0}}},
 		},
 

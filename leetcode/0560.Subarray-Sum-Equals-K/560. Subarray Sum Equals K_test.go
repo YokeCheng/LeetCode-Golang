@@ -26,22 +26,6 @@ type ans560 struct {
 func Test_Problem560(t *testing.T) {
 
 	qs := []question560{
-
-		{
-			para560{[]int{1, 1, 1}, 2},
-			ans560{2},
-		},
-
-		{
-			para560{[]int{1, 2, 3}, 3},
-			ans560{2},
-		},
-
-		{
-			para560{[]int{1}, 0},
-			ans560{0},
-		},
-
 		{
 			para560{[]int{-1, -1, 1}, 0},
 			ans560{1},
