@@ -1,5 +1,10 @@
 package leetcode
 
+func rotate(nums []int, k int) {
+	n := len(nums) - (k % len(nums))
+	copy(nums, append(nums[n:], nums[:n]...))
+}
+
 // 解法一 时间复杂度 O(n)，空间复杂度 O(1)
 func rotate1(nums []int, k int) {
 	k %= len(nums)
@@ -26,7 +31,7 @@ func rotate2(nums []int, k int) {
 
 // 解法3 时间复杂度 O(n)，空间复杂度 O(1)
 // 设置一个临时空间，将要替换的值存入
-func rotate(nums []int, k int) {
+func rotate7(nums []int, k int) {
 	temp, next, start := nums[0], 0, 0
 	for i := 0; i < len(nums); i++ {
 		next = (next + k) % len(nums)

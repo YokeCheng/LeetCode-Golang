@@ -3,7 +3,7 @@ package leetcode
 import "strings"
 
 // 解法一
-func numJewelsInStones(J string, S string) int {
+func numJewelsInStones2(J string, S string) int {
 	count := 0
 	for i := range S {
 		if strings.Contains(J, string(S[i])) {

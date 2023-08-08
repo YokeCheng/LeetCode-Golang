@@ -42,8 +42,8 @@ func Test_Problem121(t *testing.T) {
 		},
 
 		{
-			para121{[]int{1, 3, 2, 8, 4, 9}},
-			ans121{8},
+			para121{[]int{3, 8, 1, 5}},
+			ans121{6},
 		},
 	}
 

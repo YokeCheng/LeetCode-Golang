@@ -1,6 +1,7 @@
 package structures
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 
@@ -163,4 +164,21 @@ func Test_Tree2ints(t *testing.T) {
 	actual := LeetCodeOrder
 	expected := Tree2ints(root)
 	ast.Equal(expected, actual)
+}
+
+func solution(num int) string {
+	// 请实现函数
+	result := ""
+	for num >= 0 {
+		result = string(rune(num)) + result
+		num++
+		if num > 100 {
+			break
+		}
+	}
+	return result
+}
+
+func Test_solution(t *testing.T) {
+	fmt.Println(solution(64))
 }

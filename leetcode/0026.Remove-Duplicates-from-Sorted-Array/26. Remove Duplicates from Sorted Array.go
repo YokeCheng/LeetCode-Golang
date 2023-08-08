@@ -1,22 +1,18 @@
 package leetcode
 
 // 解法一
-func removeDuplicates(nums []int) int {
-	if len(nums) == 0 {
-		return 0
-	}
-	last, finder := 0, 0
-	for last < len(nums)-1 {
-		for nums[finder] == nums[last] {
-			finder++
-			if finder == len(nums) {
-				return last + 1
-			}
+// 通过双指针，last指的是不重复的当前值，内循环finder找到下一个和last不同的值，
+// 然后将finder值和last的下一个值替换
+func removeElement3(nums []int) int {
+	i := 0
+	for j := 1; j < len(nums); j++ {
+		if nums[i] == nums[j] {
+			continue
 		}
-		nums[last+1] = nums[finder]
-		last++
+		nums[i+1] = nums[j]
+		i++
 	}
-	return last + 1
+	return i + 1
 }
 
 // 解法二
