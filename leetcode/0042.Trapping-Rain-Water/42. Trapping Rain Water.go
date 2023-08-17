@@ -1,5 +1,7 @@
 package leetcode
 
+// 通过双指针找到两边最高值，
+// 当值小于最高值，则为存水，反之则没水
 func trap(height []int) int {
 	left := 0                // 左指针初始位置
 	right := len(height) - 1 // 右指针初始位置
