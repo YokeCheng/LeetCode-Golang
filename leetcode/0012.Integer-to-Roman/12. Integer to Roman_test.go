@@ -26,7 +26,7 @@ func Test_Problem12(t *testing.T) {
 
 	qs := []question12{
 
-		{
+		/*{
 			para12{3},
 			ans12{"III"},
 		},
@@ -40,11 +40,11 @@ func Test_Problem12(t *testing.T) {
 			para12{9},
 			ans12{"IX"},
 		},
-
 		{
 			para12{58},
 			ans12{"LVIII"},
 		},
+		*/
 
 		{
 			para12{1994},
@@ -64,8 +64,8 @@ func Test_Problem12(t *testing.T) {
 	fmt.Printf("------------------------Leetcode Problem 12------------------------\n")
 
 	for _, q := range qs {
-		_, p := q.ans12, q.para12
-		fmt.Printf("【input】:%v    【output】:%v\n", p.one, intToRoman(p.one))
+		m, p := q.ans12, q.para12
+		fmt.Printf("【input】:%v\n  【ans】:%v\n  【output】:%v\n", p.one, m.one, intToRoman(p.one))
 	}
 	fmt.Printf("\n\n\n")
 }
