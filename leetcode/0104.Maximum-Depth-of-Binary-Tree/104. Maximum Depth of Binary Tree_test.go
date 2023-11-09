@@ -34,7 +34,7 @@ func Test_Problem104(t *testing.T) {
 		},
 
 		{
-			para104{[]int{3, 9, 20, structures.NULL, structures.NULL, 15, 7}},
+			para104{[]int{3, 9, 20, 10, structures.NULL, 15, 7}},
 			ans104{3},
 		},
 	}

@@ -15,18 +15,26 @@ type TreeNode = structures.TreeNode
  *     Right *TreeNode
  * }
  */
-
 func minDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
+
+	leftDepth := minDepth(root.Left)
+	rightDepth := minDepth(root.Right)
+
+	// 当左子树为空时，返回右子树的深度加1
 	if root.Left == nil {
-		return minDepth(root.Right) + 1
+		return rightDepth + 1
 	}
+
+	// 当右子树为空时，返回左子树的深度加1
 	if root.Right == nil {
-		return minDepth(root.Left) + 1
+		return leftDepth + 1
 	}
-	return min(minDepth(root.Left), minDepth(root.Right)) + 1
+
+	// 否则，返回较小深度的子树深度加1
+	return min(leftDepth, rightDepth) + 1
 }
 
 func min(a int, b int) int {

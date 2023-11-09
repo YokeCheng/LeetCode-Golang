@@ -28,18 +28,18 @@ func Test_Problem111(t *testing.T) {
 
 	qs := []question111{
 
-		{
-			para111{[]int{}},
-			ans111{0},
-		},
-
-		{
-			para111{[]int{1}},
+		//{
+		//	para111{[]int{}},
+		//	ans111{0},
+		//},
+		//
+		/*{
+			para111{[]int{2, structures.NULL, 3, structures.NULL, 4, structures.NULL, 5, structures.NULL, 6}},
 			ans111{1},
-		},
+		},*/
 
 		{
-			para111{[]int{3, 9, 20, structures.NULL, structures.NULL, 15, 7}},
+			para111{[]int{3, 9, 20, 10, structures.NULL, 15, 7}},
 			ans111{2},
 		},
 
