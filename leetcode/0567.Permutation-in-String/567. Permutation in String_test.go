@@ -28,7 +28,7 @@ func Test_Problem567(t *testing.T) {
 	qs := []question567{
 		{
 			para567{"hello", "ooolleoooleh"},
-			ans567{true},
+			ans567{false},
 		},
 
 		{

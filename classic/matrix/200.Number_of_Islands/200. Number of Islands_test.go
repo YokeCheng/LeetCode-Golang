@@ -1,4 +1,4 @@
-package _00__Number_of_Islands
+package _00_Number_of_Islands
 
 import (
 	"fmt"
