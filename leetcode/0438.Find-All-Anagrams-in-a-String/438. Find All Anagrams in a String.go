@@ -1,7 +1,7 @@
 package leetcode
 
 func findAnagrams(s string, p string) []int {
-	var freq [256]int
+	var freq [26]int
 	result := []int{}
 
 	// 特殊情况处理
