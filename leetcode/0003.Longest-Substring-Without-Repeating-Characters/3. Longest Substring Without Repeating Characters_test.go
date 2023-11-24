@@ -25,8 +25,7 @@ type ans3 struct {
 func Test_Problem3(t *testing.T) {
 
 	qs := []question3{
-
-		{
+		/*{
 			para3{"abcabcbb"},
 			ans3{3},
 		},
@@ -39,8 +38,7 @@ func Test_Problem3(t *testing.T) {
 		{
 			para3{"pwwkew"},
 			ans3{3},
-		},
-
+		},*/
 		{
 			para3{" "},
 			ans3{0},
@@ -51,7 +49,7 @@ func Test_Problem3(t *testing.T) {
 
 	for _, q := range qs {
 		_, p := q.ans3, q.para3
-		fmt.Printf("【input】:%v       【output】:%v\n", p, lengthOfLongestSubstring1(p.s))
+		fmt.Printf("【input】:%v       【output】:%v\n", p, lengthOfLongestSubstring(p.s))
 	}
 	fmt.Printf("\n\n\n")
 }
