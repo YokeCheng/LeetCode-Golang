@@ -27,7 +27,10 @@ type ans234 struct {
 func Test_Problem234(t *testing.T) {
 
 	qs := []question234{
-
+		{
+			para234{[]int{1, 2, 2, 1}},
+			ans234{false},
+		},
 		{
 			para234{[]int{1, 1, 2, 2, 3, 4, 4, 4}},
 			ans234{false},
