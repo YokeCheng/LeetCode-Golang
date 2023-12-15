@@ -1,8 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
-
 	"github.com/halfrost/LeetCode-Go/structures"
 )
 
@@ -16,30 +14,37 @@ type ListNode = structures.ListNode
  *     Next *ListNode
  * }
  */
+// getIntersectionNode 返回两个链表的交点节点
+// 参数 headA 和 headB 分别是两个链表的头节点
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
-	//boundary check
+	// 检查链表是否为空
 	if headA == nil || headB == nil {
 		return nil
 	}
 
-	a := headA
-	b := headB
+	a, b := headA, headB
 
-	//if a & b have different len, then we will stop the loop after second iteration
 	for a != b {
-		//for the end of first iteration, we just reset the pointer to the head of another linkedlist
+		// 在第一次迭代结束时，将指针重置为另一个链表的头节点
+		a = a.Next
+		b = b.Next
+
+		// 如果 a 和 b 都为空，说明两个链表没有交点
+		if a == nil && b == nil {
+			return nil
+		}
+
+		// 如果 a 到达链表末尾，将其重置为另一个链表的头节点
 		if a == nil {
 			a = headB
-		} else {
-			a = a.Next
 		}
 
+		// 如果 b 到达链表末尾，将其重置为另一个链表的头节点
 		if b == nil {
 			b = headA
-		} else {
-			b = b.Next
 		}
-		fmt.Printf("a = %v b = %v\n", a, b)
 	}
+
+	// 返回交点节点，如果没有交点则返回 nil
 	return a
 }
